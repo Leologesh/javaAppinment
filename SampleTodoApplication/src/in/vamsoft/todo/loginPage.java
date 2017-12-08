@@ -75,10 +75,12 @@ public class loginPage extends HttpServlet {
 			 TodoInter inter = new ServiceTodo();
 			 int addUser = inter.Checkpassword(pojos);
 			 if((addUser!=1)&(addUser!=0)) {
+				 String ar=null;
 				 	response.getWriter().write("CorrectLogin");
 				 	HttpSession	httpSession = request.getSession();
 					httpSession.setAttribute("addUser", addUser);
-					
+//					RequestDispatcher dispatcher = request.getRequestDispatcher(ar);
+//					response.sendRedirect();
 			 }
 			 else if((addUser==1)) {
 				 response.getWriter().write("Email id is not registered");
